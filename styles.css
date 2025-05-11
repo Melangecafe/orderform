@@ -1,0 +1,182 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+        padding: 10px;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.center-button {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.item-row span {
+    font-size: 1rem;
+    flex-basis: 100%;
+    margin-bottom: 5px;
+}
+
+.item-row input[type="number"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.share-buttons button {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+.green-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.green-button:hover {
+    background-color: #218838;
+}
+
+.orange-button {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.orange-button:hover {
+    background-color: #e0540d;
+}
+
+.error-message {
+    color: red;
+    background-color: #ffecec;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+details {
+    margin-bottom: 20px;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+summary:hover {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input, select, textarea {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .center-button {
+        width: 100%;
+    }
+
+    .share-buttons button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .item-row {
+        flex-direction: column;
+    }
+
+    .item-row span {
+        flex-basis: 100%;
+        margin-bottom: 5px;
+    }
+
+    .item-row input[type="number"] {
+        width: 100%;
+        margin-top: 5px;
+    }
+}

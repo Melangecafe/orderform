@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма Заказа Выпечки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Форма Заказа Выпечки</h1>
+    <form id="orderForm">
+        <!-- Выбор торговой точки -->
+        <label for="storeName">Название торговой точки:</label>
+        <select id="storeName" name="storeName" required>
+            <option value="">Выберите торговую точку</option>
+        </select>
+        <div class="error-message" id="storeNameError" style="display:none;">Пожалуйста, выберите торговую точку.</div>
+
+        <!-- Фамилия сотрудника -->
+        <label for="lastName">Фамилия сотрудника:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <div class="error-message" id="lastNameError" style="display:none;">Введите фамилию сотрудника.</div>
+
+        <!-- Загрузка файла ceh.txt -->
+        <label for="uploadFile">Загрузить новый список товаров (файл ceh.txt):</label>
+        <input type="file" id="uploadFile" accept=".txt">
+        <button type="button" id="loadButton" class="orange-button" style="display: none;">
+            Загрузить на торговую точку
+        </button>
+
+        <!-- Общий блок для ошибок -->
+        <div id="orderError" class="error-message" style="display:none;">Произошла ошибка.</div>
+
+        <!-- Контейнер для товаров -->
+        <div id="itemsContainer">
+            <!-- Здесь будут динамически добавляться строки -->
+        </div>
+
+        <!-- Кнопки действия -->
+        <div class="share-buttons">
+            <button type="button" onclick="orderExporter.submitForm()" class="orange-button">Сохранить заявку</button>
+            <button type="button" class="green-button">Поделиться в WhatsApp</button>
+        </div>
+    </form>
+
+    <!-- Подключение скриптов -->
+   <script type="module" src="formValidator.js"></script>
+    <script type="module" src="fileHandler.js"></script>
+    <script type="module" src="orderExporter.js"></script>
+    <script type="module" src="whatsappSender.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -28,7 +28,7 @@ function shareTextViaWhatsApp() {
     whatsappMessage += `Сотрудник: ${formData.get('lastName')}\n\n`;
 
     // Добавляем строку "Выпечка"
-    whatsappMessage += `Выпечка\n`;
+    whatsappMessage += `Товар\n`;
 
     // Разбиение данных на группы (бывшие категории)
     const groupedOrderData = groupItemsByCategory(orderData);

@@ -1,67 +1,86 @@
 /* Общие стили */
 body {
-font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-
-    /* Градиент: от тёплого красно-коричневого к светло-бежевому (как берёза) */
-    background: linear-gradient(135deg, #d42c2c, #a64b00, #f0e6d2);
-    
-    /* Добавляем крапинки поверх градиента */
-    background-image: 
-        /* Крупные крапинки (красные и тёмные) */
-        radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.3) 1px, transparent 1px),
-        radial-gradient(circle at 70% 60%, rgba(200, 0, 0, 0.2) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 40% 80%, rgba(100, 0, 0, 0.25) 1px, transparent 1px),
-        radial-gradient(circle at 90% 20%, rgba(150, 0, 0, 0.2) 2px, transparent 2px),
-        
-        /* Мелкие случайные точки (хаотичный эффект) */
-        radial-gradient(circle at 10% 50%, rgba(180, 50, 0, 0.15) 1px, transparent 1px),
-        radial-gradient(circle at 60% 10%, rgba(120, 20, 0, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 85% 75%, rgba(200, 30, 0, 0.12) 1px, transparent 1px);
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-}
-
-/* Чтобы крапинки не повторялись слишком часто, можно задать разные позиции и размеры */
-@media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-        padding: 10px;
-        background-size: contain;
-        background-repeat: repeat-y;
-    } 
-{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     line-height: 1.6;
-    background-image: url('');
-    background-size: cover;
+
+    /* Градиент: тёплые красно-коричневые оттенки, напоминающие окрашенную берёзу */
+    background: linear-gradient(135deg, #d42c2c, #a64b00, #f0e6d2);
+
+    /* Добавляем хаотичные крапинки поверх градиента с помощью радиальных градиентов */
+    background-image:
+        /* Основной градиент */
+        linear-gradient(135deg, #d42c2c, #a64b00, #f0e6d2),
+        
+        /* Крупные крапинки — красные и тёмные */
+        radial-gradient(circle at 15% 25%, rgba(139, 0, 0, 0.3) 2px, transparent 2px),
+        radial-gradient(circle at 75% 40%, rgba(180, 0, 0, 0.25) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 30% 70%, rgba(100, 0, 0, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 90% 15%, rgba(200, 30, 0, 0.3) 2px, transparent 2px),
+
+        /* Мелкие случайные точки — создаём эффект "крапления" */
+        radial-gradient(circle at 10% 60%, rgba(160, 40, 0, 0.15) 1px, transparent 1px),
+        radial-gradient(circle at 55% 10%, rgba(120, 20, 0, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 80% 85%, rgba(190, 50, 0, 0.12) 1px, transparent 1px),
+        radial-gradient(circle at 40% 35%, rgba(140, 0, 0, 0.18) 1px, transparent 1px),
+        radial-gradient(circle at 65% 65%, rgba(170, 20, 0, 0.14) 1px, transparent 1px);
+
+    /* Повторяем фон, чтобы крапинки выглядели естественнее */
+    background-size: cover, 
+                     20px 20px, 
+                     30px 30px, 
+                     40px 40px, 
+                     50px 50px, 
+                     25px 25px, 
+                     35px 35px, 
+                     45px 45px, 
+                     30px 30px;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat, 
+                        repeat, 
+                        repeat, 
+                        repeat, 
+                        repeat, 
+                        repeat, 
+                        repeat, 
+                        repeat, 
+                        repeat;
     background-attachment: fixed;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* резервный цвет на случай, если градиент не покроет всё */
 }
 
+/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
     body {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        background-size: contain, 
+                         40px 40px, 
+                         60px 60px, 
+                         80px 80px, 
+                         100px 100px, 
+                         50px 50px, 
+                         70px 70px, 
+                         90px 90px, 
+                         60px 60px;
+        background-repeat: no-repeat, 
+                            repeat, 
+                            repeat, 
+                            repeat, 
+                            repeat, 
+                            repeat, 
+                            repeat, 
+                            repeat, 
+                            repeat;
         background-attachment: scroll;
         padding: 10px;
     }
 }
 
+/* Остальные стили без изменений */
 h1 {
     text-align: center;
     font-size: 2rem;
+    color: #333;
 }
 
 form {
@@ -175,6 +194,7 @@ summary:hover {
     background-color: #f9f9f9;
 }
 
+/* Мобильная адаптация остальных элементов */
 @media (max-width: 768px) {
     h1 {
         font-size: 1.5rem;
